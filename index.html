@@ -22,25 +22,25 @@
         <h1>Fundzer pay</h1>
         <div class="card">
           <div class="card-body">
-            <form class="" action="/paynow" method="post">
+            <form class="" method="post" action="/paynow">
               <div class="form-group">
                 <label for="">Name: </label>
-                <input class="form-control" type="text" name="name" value="">
+                <input class="form-control" type="text" name="name" id="name" value="">
               </div>
               <div class="form-group">
                 <label for="">Email: </label>
-                <input class="form-control" type="text" name="email" value="">
+                <input class="form-control" type="text" name="email" id="email" value="">
               </div>
               <div class="form-group">
                 <label for="">Phone: </label>
-                <input class="form-control" type="text" name="phone" value="">
+                <input class="form-control" type="text" name="phone" id="phone" value="">
               </div>
                 <div class="form-group">
                 <label for="">Amount: </label>
-                <input class="form-control" type="text" name="amount" value="">
+                <input class="form-control" type="text" name="amount" id="amount" value="">
               </div>
               <div class="form-group">
-                <button class="btn form-control btn-primary">Pay Now</button>
+                <button class="btn form-control btn-primary" id="final">Pay Now</button>
               </div>
             </form>
           </div>
@@ -48,4 +48,31 @@
       </div>
     </div>
   </body>
+
+  <!-- <script>
+
+    var btn = document.getElementById("final");
+    
+    btn.addEventListener("click", async function () { 
+    var amount = document.getElementById("amount").value;
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+
+    var input_data = {
+      "amount": amount,
+      "name": name,
+      "email": email,
+      "phone": phone
+    }
+      console.log(input_data);
+      let url = "http://localhost:3000/paynow";
+      let data = await fetch(url, {body: JSON.stringify(input_data)}).then(response => response.json()).then(data => {
+          alert(data.STATUS);
+        })
+     });
+
+  </script> -->
+
+
 </html>
